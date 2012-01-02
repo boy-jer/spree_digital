@@ -1,2 +1,2 @@
 require 'spree_core'
-require 'spree_digital/engine'
+require 'spree/spree_digital/engine'
