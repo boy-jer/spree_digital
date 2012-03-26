@@ -4,5 +4,4 @@ Deface::Override.new(:virtual_path => "spree/admin/shared/_product_tabs",
                      :text => "    <li<%== ' class=\"active\"' if current == \"Digital Versions\" %>>
       <%= link_to t(\"digital_versions\"), admin_product_digitals_path(@product) %>
     </li>
-",
-                     :disabled => false)
+", :disabled => false)
