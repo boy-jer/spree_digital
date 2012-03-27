@@ -1,19 +1,19 @@
 Spree::Order.class_eval do
-  
+
   after_save :check_shipping_method
-  
+
   # Are all products/variants of this Order to be downloaded by the customer?
   def digital?
     line_items.map { |item| return false unless item.digital? }
     true
   end
-  
+
   # Is at least one product/variant digital?
   def some_digital?
     line_items.map { |item| return true if item.digital? }
     false
   end
-  
+
   # Determine which method to use for shipping of digital products.
   def digital_shipping_method
     rates = rate_hash
@@ -24,9 +24,9 @@ Spree::Order.class_eval do
     # Well, at this point we have a problem. No shipping method is cost-free or called "download".
     nil
   end
-  
+
   private
-  
+
   def check_shipping_method
     self.reload
     if digital?
@@ -35,5 +35,5 @@ Spree::Order.class_eval do
       end
     end
   end
-  
+
 end
