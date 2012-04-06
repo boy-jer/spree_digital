@@ -9,7 +9,4 @@ nbproject
 *.swp
 spec/dummy
 *.tmproj
-.bundle
-.rbenv-version
-vendor
-bin
+Gemfile.lock

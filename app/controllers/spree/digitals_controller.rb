@@ -11,7 +11,7 @@ module Spree
         #   return
         # end
         if link.authorize! and File.file?(attachment.path)
-          send_file attachment.path :filename => attachment.original_filename, :type => attachment.content_type and return
+          send_file attachment.path, :filename => attachment.original_filename, :type => attachment.content_type and return
         end
       end
       render :unauthorized

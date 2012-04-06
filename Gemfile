@@ -1,36 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'spree_core', :path => '../spree/core'
-gem "sqlite3"
-gem "aws-s3"
-
 group :test do
-  gem 'rspec-rails', '= 2.6.1'
-  gem 'factory_girl', '= 2.1.2'
-  gem 'factory_girl_rails', '= 1.2.0'
-  gem 'rcov'
-  gem 'shoulda'
-  gem 'faker'
-  if RUBY_VERSION < "1.9"
-    gem "ruby-debug"
-  else
-    gem "ruby-debug19"
-  end
-end
+  # without ffaker in test it wont init
+  # https://github.com/spree/spree/pull/833
+  gem 'ffaker'
+  gem 'shoulda-matchers'
+  gem 'guard-rspec'
 
-group :cucumber do
-  gem 'cucumber-rails'
-  gem 'database_cleaner', '= 0.6.7'
-  gem 'nokogiri'
-  gem 'capybara', '1.0.1'
-  gem 'factory_girl', '= 2.1.2'
-  gem 'factory_girl_rails', '= 1.2.0'
-  gem 'faker'
-  gem 'launchy'
-  if RUBY_VERSION < "1.9"
-    gem "ruby-debug"
-  else
-    gem "ruby-debug19"
+  if RUBY_PLATFORM.downcase.include? "darwin"
+    gem 'rb-fsevent'
+    gem 'growl'
   end
 end
 
