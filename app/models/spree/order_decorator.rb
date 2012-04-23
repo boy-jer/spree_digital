@@ -15,7 +15,6 @@ Spree::Order.class_eval do
   # Determine which method to use for shipping of digital products.
   def digital_shipping_method
     rates = rate_hash
-
     # If there is a shipping method has "Download" in its name then we take that one.
     rates.each { |rate| return rate if rate[:name].downcase.include?('download') }
     # Other than that, we take the first one that we find that doesn't cost anything.
