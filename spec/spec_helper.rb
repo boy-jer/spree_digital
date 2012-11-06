@@ -31,11 +31,21 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 end
 
-require File.expand_path("../factories", __FILE__)
+require 'factory_girl'
+FactoryGirl.find_definitions
 
 # not sure if this really adds anything, but this existed in the intial version of the spree_digital rspec testing
 RSpec::Matchers.define :have_valid_factory do |factory_name|
   match do |model|
-    Factory(factory_name).new_record?.should be_false
+    begin
+      FactoryGirl.build factory_name
+    rescue ArgumentError => e
+      fail e.to_s
+    end
   end
+end
+
+# support for legacy factory girl syntax
+def Factory(*args)
+  FactoryGirl.create(*args)
 end
