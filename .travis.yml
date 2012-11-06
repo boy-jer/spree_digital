@@ -1,0 +1,4 @@
+rvm:
+  - "1.9.3"
+bundler_args: --quiet
+script: "bundle update && rake test_app && rake --trace"
