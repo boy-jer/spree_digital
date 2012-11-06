@@ -4,6 +4,11 @@ module Spree
     belongs_to :digital
     belongs_to :line_item
 
+    if Rails.env.test?
+      attr_accessible :digital
+      attr_accessible :secret
+    end
+
     validates_length_of :secret, :is => 30
     validates :digital, :presence => true
 
