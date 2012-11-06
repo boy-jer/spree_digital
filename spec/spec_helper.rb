@@ -1,7 +1,15 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
-require File.expand_path("../dummy/config/environment.rb",  __FILE__)
+begin
+  require File.expand_path("../dummy/config/environment.rb",  __FILE__)
+rescue LoadError => e
+  STDERR.puts
+  STDERR.puts "Dummy app not found: ***try running 'rake test_app' before running specs***"
+  STDERR.puts
+  STDERR.puts e
+  exit 1
+end
 
 require 'rspec/rails'
 
