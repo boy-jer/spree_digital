@@ -1,11 +1,10 @@
 Spree::Variant.class_eval do
-
-  has_one :digital, :dependent => :destroy
+  has_many :digitals
   after_save :destroy_digital, :if => :deleted?
 
   # Is this variant to be downloaded by the customer?
   def digital?
-    digital.present?
+    digitals.present?
   end
 
   private
@@ -14,7 +13,7 @@ Spree::Variant.class_eval do
   # We need to delete the Digital manually here as soon as the Variant is nullified.
   # Otherwise you'll have orphan Digitals (and their attached files!) associated with unused Variants.
   def destroy_digital
-    digital.destroy
+    digitals.map &:destroy unless Spree::DigitalConfiguration[:keep_digitals]
   end
 
 end

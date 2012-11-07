@@ -18,5 +18,7 @@ module Spree
                                         :expires => expires_in,
                                         :use_ssl => attachment.s3_protocol == 'https' ).to_s
     end
+
+    attr_accessible :variant_id, :attachment
   end
 end

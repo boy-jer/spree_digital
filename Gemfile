@@ -1,16 +1,17 @@
 source 'http://rubygems.org'
+gemspec
 
 group :test do
   # without ffaker in test it wont init
   # https://github.com/spree/spree/pull/833
   gem 'ffaker'
   gem 'shoulda-matchers'
-  gem 'guard-rspec'
 
   if RUBY_PLATFORM.downcase.include? "darwin"
+    gem 'guard-rspec'
     gem 'rb-fsevent'
     gem 'growl'
   end
 end
 
-gemspec
+gem 'spree', '~> 1.2'
