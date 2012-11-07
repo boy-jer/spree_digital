@@ -3,11 +3,15 @@ module Spree
     belongs_to :variant
     has_many :digital_links, :dependent => :destroy
 
+    s3_config_filename = File.join(Rails.root, 'config', 's3.yml')
+    s3_credentials = File.exist?(s3_config_filename) ? s3_config_filename :
+      {:access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'], :bucket => ENV['S3_BUCKET']}
+
     has_attached_file :attachment,
                       :url => ':s3_domain_url',
                       :path => ":basename.:extension",
                       :storage => :s3,
-                      :s3_credentials => File.join(Rails.root, 'config', 's3.yml'),
+                      :s3_credentials => s3_credentials,
                       :s3_permissions => 'authenticated-read',
                       :s3_protocol => 'https'
 
