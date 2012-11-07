@@ -47,8 +47,3 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
-
-# is this needed?
-require 'factory_girl'
-FactoryGirl.find_definitions
-
