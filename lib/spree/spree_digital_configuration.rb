@@ -8,8 +8,5 @@ module Spree
 
     # should digitals be kept around after the associated product is destroyed
     preference :keep_digitals,      :boolean, :default => false
-
-    # is this still used?
-    preference :expires_in,         :integer, :default => 1
   end
 end
