@@ -13,7 +13,6 @@ module SpreeDigital
       Spree::DigitalConfiguration = Spree::SpreeDigitalConfiguration.new
     end
 
-    # still used?
     initializer "spree.register.digital_shipping", :after => 'spree.register.calculators' do |app|
       app.config.spree.calculators.shipping_methods << Spree::Calculator::DigitalDelivery
     end
