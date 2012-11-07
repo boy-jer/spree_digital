@@ -1,5 +1,7 @@
 h1. Spree Digital
 
+**NOTE ON THIS FORK**: This fork stores downloadable files in Amazon S3, whereas the "main fork":https://github.com/halo/spree_digital stores them on the filesystem.
+
 This is a spree extension to enable downloadable products. The design goal is to keep it robust. It should survive future spree versions out of the box.
 
 NOTE: This is still under development, but since things were falling into place, I thought I'd publish it.
