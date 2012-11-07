@@ -1,6 +1,6 @@
 # Spree Digital
 
-**NOTE ON THIS FORK**: This fork stores downloadable files in Amazon S3, whereas the "main fork":https://github.com/halo/spree_digital stores them on the filesystem.
+**NOTE ON THIS FORK**: This fork stores downloadable files in Amazon S3, whereas the "main fork":https://github.com/harlantwood/spree_digital stores them on the filesystem.
 
 This is a spree extension to enable downloadable products (ebooks, MP3s, videos, etc).
 
@@ -27,7 +27,7 @@ The idea is simple. You attach a file to a Product (or a Variant of this Product
 Add this line to your gemfile:
 
 ```
-gem 'spree_digital', :git => 'git://github.com/halo/spree_digital.git', :branch => 'master'
+gem 'spree_digital', :git => 'git://github.com/harlantwood/spree_digital.git', :branch => 'master'
 ```
 
 The following terminal commands will copy the migration files to the corresponding directory in your Rails application and apply the migrations to your database.
@@ -100,7 +100,7 @@ References:
 
 ### Table Diagram
 
-<img src="http://github.com/halo/spree_digital/raw/master/doc/tables.png">
+<img src="https://raw.github.com/harlantwood/spree_digital/master/doc/tables.png">
 
 ### Installation
 
@@ -108,7 +108,7 @@ Get the spree framework and spree_digital extension for it:
 
 ```
 git clone git://github.com/spree/spree.git
-git clone git://github.com/halo/spree_digital.git
+git clone git://github.com/harlantwood/spree_digital.git
 ```
 
 Go into the spree directory and run the bundle command:
