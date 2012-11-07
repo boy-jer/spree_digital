@@ -21,7 +21,7 @@ The idea is simple. You attach a file to a Product (or a Variant of this Product
 
 h2. Installation
 
-I assume that you already have a Rails 3.1 Spree application up and running. If not, the "Spree Documentation":http://spreecommerce.com/documentation will help you getting started.
+I assume that you already have a Rails 3.x Spree application up and running. If not, the "Spree Documentation":http://spreecommerce.com/documentation will help you getting started.
 
 To make use of @spree_digital@, you need to add this line to your @Gemfile@:
 
