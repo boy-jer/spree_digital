@@ -24,7 +24,7 @@ I assume that you already have a Rails 3.1 Spree application up and running. If 
 To make use of @spree_digital@, you need to add this line to your @Gemfile@:
 
 <pre>
-  gem 'spree_digital', :git => 'git://github.com/sammyd/spree_digital.git', :branch => 'master'
+  gem 'spree_digital', :git => 'git://github.com/harlantwood/spree_digital.git', :branch => 'master'
 </pre>
 
 @spree_digital@ is a generator, to install it:
@@ -54,7 +54,7 @@ h1. Developer Section
 
 h3. Table Diagram
 
-<img src="http://github.com/sammyd/spree_digital/raw/master/doc/tables.png">
+<img src="http://github.com/harlantwood/spree_digital/raw/master/doc/tables.png">
 
 h3. Installation (for Developers)
 
@@ -62,7 +62,7 @@ Get the spree framework and spree_digital extension for it:
 
 <pre>
   git clone git://github.com/spree/spree.git
-  git clone git://github.com/sammyd/spree_digital
+  git clone git://github.com/harlantwood/spree_digital
 </pre>
 
 Go into the spree directory and run the bundle command:
@@ -94,4 +94,4 @@ h3. License
 
 Copyright (c) 2011 funkensturm.
 Released under the MIT License
-See "http://github.com/sammyd/spree_digital/blob/master/LICENSE":LICENSE
+See "http://github.com/harlantwood/spree_digital/blob/master/LICENSE":LICENSE
