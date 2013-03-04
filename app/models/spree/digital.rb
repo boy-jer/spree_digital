@@ -24,9 +24,10 @@ module Spree
     # TODO: Limit the attachment to one single file. Paperclip supports many by default :/
 
     def authenticated_url(expires_in = Spree::DigitalConfiguration[:authorized_days].days)
-      attachment.s3_object(nil).url_for(:read,
-                                        :expires => expires_in,
-                                        :use_ssl => attachment.s3_protocol == 'https' ).to_s
+      #attachment.s3_object(nil).url_for(:read,
+      attachment.s3_object.url_for(:read,
+                                   :expires => expires_in,
+                                   :use_ssl => attachment.s3_protocol == 'https' ).to_s
     end
 
     attr_accessible :variant_id, :attachment
